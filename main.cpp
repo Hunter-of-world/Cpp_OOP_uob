@@ -1,18 +1,48 @@
+#include <cmath>
 #include <iostream>
+using namespace std;
+class Employee {
+        private:int id;float salary;string name;
+        public:
+public:
+        void setId(int _id) {
+                if (_id > 0) {
+                        id = _id;
+                } else {
+                        cout << "Id out of range" << endl;
+                }
+        }
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+        void setSalary(float _salary) {
+                if (_salary > 0) {
+                        salary = _salary;
+                } else {
+                        cout << "Salary out of range" << endl;
+                }
+        }
 
-int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
+        void setName(string _name) {
+                name = _name;
+        }
+        int getid() {return id;}
+        float getsalary() {return salary;}
+        string getname() {return name;}\
 
-    const auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+        Employee(int _id,float _salary, string _name)
+        {
+                id=_id;salary=_salary;name=_name;
+        }
+        Employee()
+        {
+                id=100;
+                salary=1000;
+                name="Un known";
+        }
+};
+int main(){
+        Employee emp1(100,-2,"zaid");
+        cout<<"ID: "<<emp1.getid()<<endl;
+        cout<<"Salary: "<<emp1.getsalary()<<endl;
+        cout<<"Name: "<<emp1.getname()<<endl;
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
-    }
-
-    return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }
